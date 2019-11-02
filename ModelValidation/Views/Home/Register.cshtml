@@ -1,0 +1,50 @@
+﻿@model Register
+@{
+    ViewData["Title"] = "Register";
+}
+@section scripts{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+  
+    <script>
+        $(function () { $("input.input-validation-error").closest(".form-group").addClass("text-danger");});
+
+    </script>
+}
+<div class="bg-primary text-white m-1 p-1">
+
+    <h2>Register</h2>
+</div>
+
+<form class="p-1 m-1" asp-action="Register" method="post">
+
+    <div class="form-group">
+        <label asp-for="USerName">USer Name</label>
+        <div><span class="text-danger" asp-validation-for="USerName"></span></div>
+        <input class="form-control" asp-for="USerName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <div><span class="text-danger" asp-validation-for="Email"></span></div>
+        <input class="form-control" asp-for="Email" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password">Password</label>
+        <div><span class="text-danger" asp-validation-for="Password"></span></div>
+        <input class="form-control" asp-for="Password" />
+    </div>
+    <div class="form-group">
+        <label asp-for="BirthDate">Birth Date</label>
+        <div><span class="text-danger" asp-validation-for="BirthDate"></span></div>
+        <input type="text" class="form-control" asp-format="{0:d}" asp-for="BirthDate" />
+    </div>
+    <div><span class="text-danger" asp-validation-for="TermsAccept"></span></div>
+    <div class="radio form-group">
+
+        <input asp-for="TermsAccept" />
+        <label asp-for="TermsAccept" class="form-check-label">
+
+            I Accept the terms and conditions
+        </label>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Register" />
+</form>

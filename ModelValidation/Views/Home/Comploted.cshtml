@@ -1,0 +1,46 @@
+﻿@model Register
+@{
+    ViewData["Title"] = "Comploted";
+}
+
+<h1>Comploted</h1>
+
+<div class="bg-primary text-white m-1 p-1">
+
+    <h2>Register is comploted</h2>
+</div>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            USerNAme
+        </th>
+        <td>@Model.USerName</td>
+    </tr>
+
+    <tr>
+        <th>
+            Email
+        </th>
+        <td>@Model.Email</td>
+    </tr>
+
+
+    <tr>
+        <th>
+            Password
+        </th>
+        <td>@Model.Password</td>
+    </tr>
+
+
+    <tr>
+        <th>
+            Birthdate
+        </th>
+        <td>@Model.BirthDate.ToString("d")</td>
+    </tr>
+
+
+</table>
+
